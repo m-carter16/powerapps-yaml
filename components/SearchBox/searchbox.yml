@@ -1,0 +1,52 @@
+- cntSearchBox:
+    Control: GroupContainer
+    Variant: ManualLayout
+    Properties:
+      Height: =32
+      Width: =320
+      X: =50
+      Y: =50
+      BorderColor: =RGBA(96, 94, 92, 1)
+      BorderStyle: =BorderStyle.Solid
+      BorderThickness: =1
+      RadiusBottomLeft: =4
+      RadiusBottomRight: =4
+      RadiusTopLeft: =4
+      RadiusTopRight: =4
+    Children:
+    - icoSearch:
+        Control: Icon@0.0.7
+        Properties:
+          Height: =20
+          Width: =20
+          X: =6
+          Y: =6
+          Icon: ="Search"
+    - txtSearchInput:
+        Control: TextInput@0.0.54
+        Properties:
+          Appearance: ='TextInputCanvas.Appearance'.Outline
+          Height: =28
+          Width: =270
+          X: =28
+          Y: =2
+          Fill: =RGBA(255, 255, 255, 1)
+          BorderStyle: =BorderStyle.None
+          Font: =Font.'Segoe UI'
+          FontSize: =14
+          PaddingBottom: =4
+          PaddingLeft: =4
+          OnChange: '=UpdateContext({showClearButton: !IsBlank(Self.Value)})'
+          Type: ='TextInputCanvas.Type'.Search
+    - btnClear:
+        Control: Button@0.0.45
+        Properties:
+          Height: =20
+          Width: =20
+          X: =294
+          Y: =6
+          Visible: '=!IsBlank(txtSearchInput.Value)'
+          Appearance: ='ButtonCanvas.Appearance'.Transparent
+          Icon: ="Dismiss"
+          Layout: ='ButtonCanvas.Layout'.IconOnly
+          OnSelect: '=Reset(txtSearchInput); UpdateContext({showClearButton: false})'
