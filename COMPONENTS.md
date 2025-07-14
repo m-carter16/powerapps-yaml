@@ -1,4 +1,4 @@
-# Component Library Index
+# Components Library
 
 ## Available Components
 

@@ -1,4 +1,4 @@
-# PowerApps Fluent UI Component Library
+# PowerApps Fluent Design YAML Component Library
 
 A comprehensive YAML component library for PowerApps Canvas Apps that implements Fluent UI React v9 design patterns and components.
 
@@ -52,5 +52,5 @@ components/
 
 ## Documentation
 
-- **Component Index**: [COMPONENTS.md](COMPONENTS.md) - Complete list of components with descriptions and roadmap
+- **Component List**: [COMPONENTS.md](COMPONENTS.md) - Complete list of components with descriptions and roadmap
 - **Individual Components**: Each component includes its own README with detailed usage examples
