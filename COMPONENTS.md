@@ -14,10 +14,14 @@
 **Location**: `components/searchbox.yml`  
 **Description**: A search input component with icon and clear functionality
 
+#### TimePicker
+**Location**: `components/timepicker.yml`  
+**Description**: A time selection component with support for both 12-hour and 24-hour formats, featuring hour and minute dropdowns with proper validation
+
 ## Planned Components
 
 ### Input Components
-- [ ] TimePicker - Time selection component
+- [x] TimePicker - Time selection component
 - [ ] CheckboxGroup - Multiple related checkboxes
 - [ ] Switch - Toggle switch component
 
@@ -50,17 +54,24 @@
 
 ### Version History
 
-#### v1.0.0 (Current)
+#### v1.0.0
 - ✅ SearchBox
 - ✅ Dialog
 - ✅ Drawer
 - ✅ FeatureButton
 
-#### v1.1.0 (Planned)
-- 📋 Input Components
+#### v1.1.0 (Current)
+- ✅ TimePicker
 
 #### v1.2.0 (Planned)
-- 📋 Selection components
+- 📋 CheckboxGroup
+- 📋 Switch
+
+#### v1.2.0 (Planned)
+- 📋 CheckboxGroup
+- 📋 Switch
+
+#### v1.3.0 (Planned)
 - 📋 Navigation components
 
 ---

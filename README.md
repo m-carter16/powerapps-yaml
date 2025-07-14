@@ -20,15 +20,16 @@ This library provides ready-to-use YAML snippets for PowerApps Canvas Apps that 
 
 For a complete list of available components, see [COMPONENTS.md](COMPONENTS.md).
 
-#### Current Components (v1.0.0)
+#### Currently Available (v1.1.0)
 - **Dialog** - A centered dialog component with background overlay
 - **Drawer** - A side panel component that can open from left or right
 - **SearchBox** - A search input component with icon and clear functionality  
 - **FeaturedButton** - A card-like button with title, description, and icon
+- **TimePicker** - A time selection component with support for 12-hour and 24-hour formats
 
 ### Component Development Status
-- ✅ **Complete**: 4 components fully implemented with documentation
-- 📋 **Planned**: Input, Navigation, and Feedback components (see [COMPONENTS.md](COMPONENTS.md) for roadmap)
+- ✅ **Complete**: 5 components fully implemented with documentation
+- 📋 **Planned**: Additional Input, Navigation, and Feedback components (see [COMPONENTS.md](COMPONENTS.md) for roadmap)
 
 ### Component Structure
 
@@ -53,4 +54,5 @@ components/
 ## Documentation
 
 - **Component List**: [COMPONENTS.md](COMPONENTS.md) - Complete list of components with descriptions and roadmap
+- **Version History**: [CHANGELOG.md](CHANGELOG.md) - Detailed version history and release notes
 - **Individual Components**: Each component includes its own README with detailed usage examples
