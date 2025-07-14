@@ -10,7 +10,7 @@
         )
       Text: ="Open Dialog"
       Width: =170
-- cntDialog:
+- ctrDialog:
     Control: GroupContainer@1.3.0
     Variant: AutoLayout
     Properties:
@@ -27,7 +27,7 @@
       Visible: =locDialogOpen = true
       Width: =Parent.Width
     Children:
-      - cntCenteredDialog:
+      - ctrCenteredDialog:
           Control: GroupContainer@1.3.0
           Variant: AutoLayout
           Properties:
@@ -46,7 +46,7 @@
             PaddingTop: =15
             Visible: =locDialogOpen = true
           Children:
-            - cntCenteredDialogHeader:
+            - ctrCenteredDialogHeader:
                 Control: GroupContainer@1.3.0
                 Variant: AutoLayout
                 Properties:
@@ -74,7 +74,7 @@
                         Text: =
                         Visible: =!locDialogLoading
                         Width: =32
-            - cntCenteredDialogBody:
+            - ctrCenteredDialogBody:
                 Control: GroupContainer@1.3.0
                 Variant: AutoLayout
                 Properties:
@@ -97,7 +97,7 @@
                       Properties:
                         FillPortions: =1
                         Text: ="Do you confirm?"
-            - cntCenteredDialogLoad:
+            - ctrCenteredDialogLoad:
                 Control: GroupContainer@1.3.0
                 Variant: AutoLayout
                 Properties:
@@ -121,7 +121,7 @@
                         LayoutMinHeight: =100
                         SpinnerSize: ='Spinner.SpinnerSize'.ExtraLarge
                         Visible: =locDialogLoading
-            - cntCenteredDialogActions:
+            - ctrCenteredDialogActions:
                 Control: GroupContainer@1.3.0
                 Variant: AutoLayout
                 Properties:

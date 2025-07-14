@@ -56,7 +56,7 @@ UpdateContext({showClearButton: false})
 ## Customization
 
 ### Styling
-- **Size**: Modify `Height` and `Width` properties of `cntSearchBox`
+- **Size**: Modify `Height` and `Width` properties of `ctrSearchBox`
 - **Position**: Adjust `X` and `Y` coordinates
 - **Colors**: Change `BorderColor` and `Fill` properties
 - **Border**: Customize `BorderThickness` and radius properties
@@ -76,7 +76,7 @@ Adjust the positioning and sizing of child elements:
 
 ## Components Structure
 
-- `cntSearchBox`: Main container with border styling
+- `ctrSearchBox`: Main container with border styling
 - `icoSearch`: Search icon on the left
 - `txtSearchInput`: Text input field in the center
 - `btnClear`: Clear button on the right (visible when text exists)

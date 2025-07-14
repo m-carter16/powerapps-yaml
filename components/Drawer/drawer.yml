@@ -13,7 +13,7 @@
         )
       Text: ="Open Drawer"
       Width: =170
-- cntDrawerBackground:
+- ctrDrawerBackground:
     Control: GroupContainer@1.3.0
     Variant: AutoLayout
     Properties:
@@ -35,7 +35,7 @@
       Visible: =locDrawer.Open = true
       Width: =Parent.Width
     Children:
-      - cntDrawer:
+      - ctrDrawer:
           Control: GroupContainer@1.3.0
           Variant: AutoLayout
           Properties:
@@ -50,7 +50,7 @@
             PaddingTop: =15
             Visible: =locDrawer.Open = true
           Children:
-            - cntSidedDrawerHeader:
+            - ctrSidedDrawerHeader:
                 Control: GroupContainer@1.3.0
                 Variant: AutoLayout
                 Properties:
@@ -77,7 +77,7 @@
                         Text: =
                         Visible: =!locDrawerLoading
                         Width: =32
-            - cntSidedDrawerBody:
+            - ctrSidedDrawerBody:
                 Control: GroupContainer@1.3.0
                 Variant: AutoLayout
                 Properties:
@@ -90,7 +90,7 @@
                   RadiusTopLeft: =0
                   RadiusTopRight: =0
                   Visible: =!locDrawerLoading
-            - cntSidedDrawerLoad:
+            - ctrSidedDrawerLoad:
                 Control: GroupContainer@1.3.0
                 Variant: AutoLayout
                 Properties:
@@ -114,7 +114,7 @@
                         LayoutMinHeight: =100
                         SpinnerSize: ='Spinner.SpinnerSize'.ExtraLarge
                         Visible: =locDrawerLoading
-            - cntSidedDrawerActions:
+            - ctrSidedDrawerActions:
                 Control: GroupContainer@1.3.0
                 Variant: AutoLayout
                 Properties:

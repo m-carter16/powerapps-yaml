@@ -27,7 +27,7 @@ We've implemented a dual format approach that supports both copy/paste and sourc
 **Example Structure:**
 ```yaml
 # ========== START COPY FROM HERE ==========
-- cntSearchBox:
+- ctrSearchBox:
     Control: Container
     Variant: manualLayoutContainer
     Properties:
@@ -58,7 +58,7 @@ Screens:
     Properties:
       # Screen properties
     Children:
-    - cntSearchBox:
+    - ctrSearchBox:
         Control: Container
         # Component definition
 ```

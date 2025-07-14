@@ -55,9 +55,9 @@ UpdateContext({locDialogLoading: true})
 ## Components Structure
 
 - `btnOpenDialog`: Trigger button to open the dialog
-- `cntDialog`: Main dialog container with overlay
-- `cntCenteredDialog`: Centered dialog box
-- `cntCenteredDialogHeader`: Header with title and close button
-- `cntCenteredDialogBody`: Main content area
-- `cntCenteredDialogLoad`: Loading state container
-- `cntCenteredDialogActions`: Action buttons container
+- `ctrDialog`: Main dialog container with overlay
+- `ctrCenteredDialog`: Centered dialog box
+- `ctrCenteredDialogHeader`: Header with title and close button
+- `ctrCenteredDialogBody`: Main content area
+- `ctrCenteredDialogLoad`: Loading state container
+- `ctrCenteredDialogActions`: Action buttons container

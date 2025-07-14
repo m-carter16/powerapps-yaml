@@ -1,4 +1,4 @@
-- cntSearchBox:
+- ctrSearchBox:
     Control: GroupContainer@1.3.0
     Variant: ManualLayout
     Properties:

@@ -66,7 +66,7 @@ UpdateContext({locDrawerLoading: true})
 
 - **Drawer Side**: Set `locDrawer.Type` to "left" or "right"
 - **Header Text**: Modify the `lblSidedDrawerHeader` Text property
-- **Body Content**: Add content to `cntSidedDrawerBody` container
+- **Body Content**: Add content to `ctrSidedDrawerBody` container
 - **Loading Message**: Update the `spnSidedDrawerLoad` Label property
 - **Button Actions**: Customize the OnSelect properties of action buttons
 - **Styling**: Adjust colors, sizes, and spacing in the Properties sections
@@ -74,16 +74,16 @@ UpdateContext({locDrawerLoading: true})
 ## Components Structure
 
 - `btnOpenDrawer`: Trigger button to open the drawer
-- `cntDrawerBackground`: Main drawer background with overlay
-- `cntDrawer`: Drawer container
-- `cntSidedDrawerHeader`: Header with title and close button
-- `cntSidedDrawerBody`: Main content area (add your content here)
-- `cntSidedDrawerLoad`: Loading state container
-- `cntSidedDrawerActions`: Action buttons container
+- `ctrDrawerBackground`: Main drawer background with overlay
+- `ctrDrawer`: Drawer container
+- `ctrSidedDrawerHeader`: Header with title and close button
+- `ctrSidedDrawerBody`: Main content area (add your content here)
+- `ctrSidedDrawerLoad`: Loading state container
+- `ctrSidedDrawerActions`: Action buttons container
 
 ## Tips
 
 - The drawer automatically positions itself on the correct side based on the Type setting
-- Use the body container (`cntSidedDrawerBody`) to add your custom content
+- Use the body container (`ctrSidedDrawerBody`) to add your custom content
 - The loading state will hide the main content and show a spinner
 - Customize button actions to perform your specific business logic before closing

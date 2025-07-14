@@ -88,25 +88,25 @@ Set(yourVariable, "value");
 
 ### Colors
 - **Title Color**: Modify `lblFeaturedButtonTitle_FB.FontColor`
-- **Background**: Change `cntFeaturedButton_FB.Fill`
+- **Background**: Change `ctrFeaturedButton_FB.Fill`
 - **Icon Color**: Update the SVG fill color in the Image property
 
 ### Sizing
-- **Component Size**: Adjust `cntFeaturedButton_FB.Height` and `Width`
+- **Component Size**: Adjust `ctrFeaturedButton_FB.Height` and `Width`
 - **Icon Size**: Modify `imgFeaturedButton_FB.Height` (width auto-adjusts)
 - **Text Size**: Update font sizes in the label properties
 
 ### Layout
-- **Padding**: Adjust padding properties in `cntFeaturedButtonBody_FB`
+- **Padding**: Adjust padding properties in `ctrFeaturedButtonBody_FB`
 - **Spacing**: Modify `LayoutGap` for space between icon and text
 - **Shadow**: Customize `DropShadow` property
 
 ## Components Structure
 
-- `cntFeaturedButton_FB`: Main container with card styling
-- `cntFeaturedButtonBody_FB`: Inner container with horizontal layout
+- `ctrFeaturedButton_FB`: Main container with card styling
+- `ctrFeaturedButtonBody_FB`: Inner container with horizontal layout
 - `imgFeaturedButton_FB`: Icon image component
-- `cntFeaturedButtonLabels_FB`: Text container with vertical layout
+- `ctrFeaturedButtonLabels_FB`: Text container with vertical layout
 - `lblFeaturedButtonTitle_FB`: Title text (bold, themed color)
 - `lblFeaturedButtonDescription_FB`: Description text (medium weight)
 - `btnFeaturedButton_FB`: Invisible button overlay for click handling
