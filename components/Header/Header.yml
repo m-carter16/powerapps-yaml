@@ -1,0 +1,50 @@
+ComponentDefinitions:
+  Header:
+    DefinitionType: CanvasComponent
+    CustomProperties:
+      PrimaryText:
+        PropertyKind: Input
+        DisplayName: PrimaryText
+        Description: Main title text displayed prominently at the top
+        DataType: Text
+        Default: ="Monthly Roadmap Dashboard"
+      SecondaryText:
+        PropertyKind: Input
+        DisplayName: SecondaryText
+        Description: Description text displayed below the title
+        DataType: Text
+        Default: ="Highly Confidential - Internal Only"
+    Properties:
+      Fill: =App.Theme.Colors.Primary
+      Height: =70
+      Width: =App.DesignWidth
+    Children:
+      - ctr_Header:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            Width: =Parent.Width
+          Children:
+            - lblHeaderTitle:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  Height: =35
+                  Size: =24
+                  Text: =Header.PrimaryText
+                  VerticalAlign: =VerticalAlign.Middle
+                  Weight: ='TextCanvas.Weight'.Bold
+            - lblHeaderDescription:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontItalic: =true
+                  Size: =16
+                  Text: =Header.SecondaryText
+                  VerticalAlign: =VerticalAlign.Middle
+                  Weight: ='TextCanvas.Weight'.Regular
