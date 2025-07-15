@@ -1,6 +1,6 @@
 # FeaturedButton Component
 
-A reusable featured button component for PowerApps that displays an icon, title, and description in a clean card-style layout with click functionality.
+A reusable featured button canvas component for PowerApps that displays an icon, title, and description in a clean card-style layout with click functionality.
 
 ## Features
 
@@ -11,6 +11,15 @@ A reusable featured button component for PowerApps that displays an icon, title,
 - **Click functionality** with customizable OnSelect action
 - **Professional styling** using app theme colors
 - **Horizontal layout** with icon on left, content on right
+
+## Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| Image | Input | Icon or image to display in the featured button |
+| PrimaryText | Input | Main title text displayed prominently at the top |
+| SecondaryText | Input | Description text displayed below the title with wrapping support |
+| OnSelect | Event | Action to execute when the featured button is clicked |
 
 ## Installation
 
