@@ -30,7 +30,7 @@ ComponentDefinitions:
       Height: =100
       Width: =320
     Children:
-      - conFeatureButton:
+      - ctrFeatureButton:
           Control: GroupContainer@1.3.0
           Variant: ManualLayout
           Properties:

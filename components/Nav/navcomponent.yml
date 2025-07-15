@@ -40,7 +40,7 @@ ComponentDefinitions:
       Fill: =App.Theme.Colors.Primary
       Width: =If(Self.Expanded, If(Self.OpenPanelWidth, Self.OpenPanelWidth, 250), 42)
     Children:
-      - conUser:
+      - ctrUser:
           Control: GroupContainer@1.3.0
           Variant: AutoLayout
           Properties:
@@ -69,7 +69,7 @@ ComponentDefinitions:
                   Text: =User().FullName
                   VerticalAlign: =VerticalAlign.Middle
                   Weight: ='TextCanvas.Weight'.Bold
-      - conItems:
+      - ctrItems:
           Control: GroupContainer@1.3.0
           Variant: AutoLayout
           Properties:
@@ -87,10 +87,10 @@ ComponentDefinitions:
                 Variant: Vertical
                 Properties:
                   Items: =Nav.Items
+                  LayoutMinWidth: =Parent.Width
                   ShowScrollbar: =false
                   TemplatePadding: =0
                   TemplateSize: =40
-                  Width: =0
                 Children:
                   - lblSectionHeader:
                       Control: Text@0.0.51
@@ -106,7 +106,7 @@ ComponentDefinitions:
                         Weight: ='TextCanvas.Weight'.Bold
                         Width: =Parent.TemplateWidth
                         Y: =15
-                  - conClickableItem:
+                  - ctrClickableItem:
                       Control: GroupContainer@1.3.0
                       Variant: AutoLayout
                       Properties:
