@@ -1,6 +1,6 @@
 # SearchBox Component
 
-A reusable search input component for PowerApps with search icon, text input field, and clear button functionality.
+A reusable search input canvas component for PowerApps with search icon, text input field, and clear button functionality.
 
 ## Features
 
@@ -12,12 +12,23 @@ A reusable search input component for PowerApps with search icon, text input fie
 - **Clean border styling** with rounded corners
 - **Context variable integration** for state management
 
+## Properties
+
+| Name | Type | Description |
+|------|------|-------------|
+| Value | Output | Outputs the search text value to be used in the parent app |
+| UseFilterIcon | Input (Boolean) | Set to true to use filter icon instead of the search icon |
+| IconColor | Input (Color) | Changes the color of the icons (Search or Filter, Cancel) |
+
 ## Installation
 
-1. Copy the YAML content from `searchbox.yml` between the START and END markers
-2. In PowerApps Studio, select the screen where you want to add the SearchBox
-3. Press Ctrl+V to paste
-4. The SearchBox will appear on your screen ready to use
+1. Copy the YAML content from `searchbox.yml`
+2. In your PowerApps canvas app, click the components tab
+3. Press Ctrl+V to paste. You do not need to create new component. It will paste as a new component.
+4. Your component is now ready to be added to any screen of your app. 
+5. If you want to use filter icon, set the UseFilterIcon to true
+6. If you want to change the color of the icon, set IconColor to desired color.
+7. You can use the "Value" property of the component to filter/search your collection.
 
 ## Usage
 
@@ -28,9 +39,9 @@ The SearchBox is ready to use immediately after pasting. The search input will:
 - Display a clear button (X) on the right when text is present
 
 ### Accessing Search Value
-Use the text input control's value in your formulas:
+Use the component's `Value` output property in your formulas:
 ```powerpoint
-txtSearchInput.Value
+SearchBox1.Value
 ```
 
 ### Handling Search Logic
@@ -39,7 +50,7 @@ Add your search logic to the `OnChange` property or create a separate search but
 // In OnChange property (real-time search)
 UpdateContext({showClearButton: !IsBlank(Self.Value)});
 // Add your search logic here
-Filter(YourDataSource, SearchColumn in txtSearchInput.Value)
+Filter(YourDataSource, SearchColumn in SearchBox1.Value)
 ```
 
 ### Clearing the Search

@@ -1,0 +1,161 @@
+ComponentDefinitions:
+  Nav:
+    DefinitionType: CanvasComponent
+    CustomProperties:
+      Expanded:
+        PropertyKind: Input
+        DisplayName: Expanded
+        Description: Controls whether the navigation panel is expanded (true) or collapsed (false)
+        DataType: Boolean
+        Default: =false
+      Items:
+        PropertyKind: Input
+        DisplayName: Items
+        Description: Table of navigation items with id, isHeader, labelText, itemIcon, and screen properties
+        DataType: Table
+        Default: |-
+          =Table(
+            { id: 1, isHeader: true, labelText: "Main", itemIcon: Blank(), screen: Blank() },
+            { id: 2, isHeader: false, labelText: "Home", itemIcon: Icon.Home, screen: App.ActiveScreen }, 
+            { id: 3, isHeader: false, labelText: "Dashboard", itemIcon: Icon.Waffle, screen: App.ActiveScreen },
+            { id: 4, isHeader: false, labelText: "Analytics", itemIcon: Icon.Globe, screen: App.ActiveScreen },
+            { id: 5, isHeader: true, labelText: "Workspace", itemIcon: Blank(), screen: Blank() },
+            { id: 6, isHeader: false, labelText: "Teams", itemIcon: Icon.Person, screen: App.ActiveScreen },
+            { id: 7, isHeader: false, labelText: "Messages", itemIcon: Icon.Message, screen: App.ActiveScreen },
+            { id: 8, isHeader: false, labelText: "Settings", itemIcon: Icon.Settings, screen: App.ActiveScreen }
+          )
+      OpenPanelWidth:
+        PropertyKind: Input
+        DisplayName: OpenPanelWidth
+        Description: Width of the navigation panel when expanded
+        DataType: Number
+        Default: =275
+      ShowUser:
+        PropertyKind: Input
+        DisplayName: ShowUser
+        Description: Controls whether the user information is displayed at the bottom
+        DataType: Boolean
+        Default: =true
+    Properties:
+      Fill: =App.Theme.Colors.Primary
+      Width: =If(Self.Expanded, If(Self.OpenPanelWidth, Self.OpenPanelWidth, 250), 42)
+    Children:
+      - conUser:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height * 7%
+            LayoutDirection: =LayoutDirection.Horizontal
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =If(Nav.ShowUser && Nav.Expanded, true, false)
+            Width: =Parent.Width
+            Y: =Parent.Height - Self.Height
+          Children:
+            - lblUser:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FillPortions: =1
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  Height: =Parent.Height
+                  PaddingBottom: =5
+                  PaddingRight: =5
+                  PaddingTop: =5
+                  Size: =16
+                  Text: =User().FullName
+                  VerticalAlign: =VerticalAlign.Middle
+                  Weight: ='TextCanvas.Weight'.Bold
+      - conItems:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height - conUser.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+          Children:
+            - galSideBarItems:
+                Control: Gallery@2.15.0
+                Variant: Vertical
+                Properties:
+                  Items: =Nav.Items
+                  ShowScrollbar: =false
+                  TemplatePadding: =0
+                  TemplateSize: =40
+                  Width: =0
+                Children:
+                  - lblSectionHeader:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: =If(Nav.Expanded, 'TextCanvas.Align'.Start, 'TextCanvas.Align'.Center)
+                        FontColor: =RGBA(255, 255, 255, 1)
+                        Height: =Parent.TemplateHeight - 15
+                        PaddingLeft: =If(Nav.Expanded, Parent.TemplateWidth * 0.1, 0)
+                        Size: =16
+                        Text: =If(Nav.Expanded, ThisItem.labelText, "—")
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =ThisItem.isHeader
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Parent.TemplateWidth
+                        Y: =15
+                  - conClickableItem:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.TemplateHeight
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =If(Nav.Expanded, 15, 0)
+                        LayoutJustifyContent: =If(Nav.Expanded, LayoutJustifyContent.Start, LayoutJustifyContent.Center)
+                        PaddingLeft: =If(Nav.Expanded, Parent.TemplateWidth * 0.1, 0)
+                        Visible: =!ThisItem.isHeader
+                        Width: =Parent.TemplateWidth
+                      Children:
+                        - icoItem:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              Color: =RGBA(255, 255, 255, 1)
+                              Height: =Parent.Height * 0.5
+                              Icon: =ThisItem.itemIcon
+                              Tooltip: =
+                              Width: =Self.Height
+                        - lblNavLabel:
+                            Control: Text@0.0.51
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              FillPortions: =1
+                              FontColor: =RGBA(255, 255, 255, 1)
+                              Height: =Parent.Height
+                              Size: =16
+                              Text: =ThisItem.labelText
+                              VerticalAlign: =VerticalAlign.Middle
+                              Visible: =Nav.Expanded
+                              Width: =Parent.Width - icoItem.Width - Parent.LayoutGap
+                  - btnItemAction:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Parent.TemplateHeight
+                        HoverFill: =RGBA(0,0,0,.05)
+                        OnSelect: =If(!IsBlank(ThisItem.screen), Navigate(ThisItem.screen))
+                        PressedBorderColor: =App.Theme.Colors.Darker10
+                        PressedFill: =ColorFade(Self.HoverFill, -20%)
+                        RadiusBottomLeft: =
+                        RadiusBottomRight: =
+                        RadiusTopLeft: =
+                        RadiusTopRight: =
+                        Text: =""
+                        Tooltip: =ThisItem.labelText
+                        Visible: =!ThisItem.isHeader
+                        Width: =Parent.TemplateWidth * 0.9
+                        X: =Parent.TemplateWidth * 0.05
